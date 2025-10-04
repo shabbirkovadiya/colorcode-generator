@@ -3,6 +3,7 @@ import "./App.css";
 import Values from "values.js";
 import Colorbox from "./components/Colorbox";
 import { LuClipboardPaste } from "react-icons/lu";
+import { toast } from "react-toastify";
 
 
 export default function ColorCodeGenerator() {
@@ -16,8 +17,8 @@ export default function ColorCodeGenerator() {
       const colors = new Values(inputColor).all(Math.floor(100 / shades));
       setGeneratedColor(colors);
       console.log(GeneratedColor)
-    } catch (err) {
-      alert("Invalid color:", err);
+    } catch (e) {
+      toast.error("Invalid colour code!");
     }
   };
 const handleCopy = async () => {
