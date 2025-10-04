@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root{
+  --input-focus: #2d8cf0;
+  --font-color: #323232;
+  --font-color-sub: #666;
+  --bg-color: #fff;
+  --main-color: #323232;
+}
+body {
+  font-family: "Poppins";
+  background: #f1f0ea;
+}
+.app {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.nav {
+  background: lightgrey;
+  color: black;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "poppins";
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+}
+.tooltip-bar{
+  padding: 10px 0px;
+  font-family: "poppins";
+  opacity: .6;
+}
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.input-wrapper{
+  position: relative;
+}
+input,select,option {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--font-color);
+  outline: none;
+  font-family: "poppins";
+  padding: 5px 10px;
+}
+input{
+  padding-left:35px;
+
+}
+input::placeholder {
+  color: var(--font-color-sub);
+  opacity: 0.8;
+  font-weight: 300;
+  font-size: 14px;
+}
+select{
+  width: 100px;
+  cursor: pointer;
+}
+
+/* From Uiverse.io by adamgiebl */ 
+.Generate-Btn {
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 13px;
+  margin: 0;
+  text-decoration: none;
+  color: black;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 0 var(--main-color);
+  font-family: "poppins";
+}
+.Generate-Btn::after{
+  content: '';
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 5px 5px var(--main-color);
+  transition: ease-out 0.5s;
+
+}
+
+.Generate-Btn:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 black;
+}
+
+.Generate-Btn:active {
+  transform: scale(0.9);
+}
+.Paste-Btn{
+  border:none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 5px;
+  transform: translateY(45%);
+}
+.Paste-Btn::after{
+  content: "";
+  position: absolute;
+  right: -7px;
+  bottom: 1px;
+  border: 1px solid var(--main-color);
+  height: 100%;
+}
+
+
+.shades {
+  display: flex;
+justify-content: start;
+align-items: center;
+flex-wrap: wrap;
+border: 2px solid var(--main-color);
+}
+
+.shade-box {
+  padding: 10px;
+  width: 10%;
+  height: 100%;
+  font-family: "poppins";
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.copyText {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  transition: transform 0.6s cubic-bezier(0.25, 1.5, 0.5, 1), 
+              opacity 0.6s ease;
+  opacity: 0.7;
+  font-size:11px;
+}
+
+.shade-box:hover .copyText {
+  transform: translateX(-50%) translateY(-40px) rotate(-3deg);
+  opacity: 1;
+  transition: transform 0.15s cubic-bezier(0.3, -0.5, 0.7, 1.7), 
+    opacity 0.2s ease;
+    bottom: 0px;
+    animation: jiggleUp 0.25s ease-out forwards;
+    opacity: 1;
+}
+
+
+@keyframes jiggleUp {
+  0% { transform: translateX(-50%) translateY(0) rotate(0); }
+  60% { transform: translateX(-50%) translateY(-20px) rotate(-3deg); }
+  80% { transform: translateX(-50%) translateY(-20px) rotate(2deg); }
+  100% { transform: translateX(-50%) translateY(-5px) rotate(0deg); }
+}
+
+@media only screen and (max-width: 1200px) {
+ .nav {
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav h1{
+font-size: 20px;
+}
+.shade-box {
+  width: 20%;
+}
+.tooltip-bar{
+  font-size: 13px;
+}
+.controls {
+  justify-content: center;
+  align-items: center;
+}
+input,select,option {
+  width: 250px;
+  padding: 5px 10px;
+}
+input{
+  padding-left:35px;
+}
+
+select{
+  width: 70px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+  /*?  B - 1200px to 1400px   xl :- (Large Desktops)  ?*/  
+}
+
+
+@media only screen and (max-width: 768px) {
+   .nav {
+    flex-direction: column;
+    gap: 10px;
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+.copyText {
+ font-family: 10px;
+}
+.nav h1{
+  font-size: 30px;
+}
+.shade-box {
+  width: 25%;
+}
+
+  /*?  768px to 992px   md :- (Tablets and small desktops)  ?*/  
+}
+
+@media only screen and (max-width: 576px) {
+  .app{
+  padding: 10px;
+
+  }
+  .shade-box {
+  width: calc(100%/3);
+}
+.nav h1{
+  font-size: 20px;
+}
+
+.tooltip-bar{
+  font-size: 10px;
+}
+.controls {
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+input,select,option {
+  padding: 5px 10px;
+}
+input{
+  padding-left:35px;
+  width: auto;
+  flex: auto;
+}
+select{
+  width: 70px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.Generate-Btn{
+  flex: auto;
+}
+.copyText{
+  font-size: 8px;
+}
+
+  /*?  B - 576px to 768px   sm :- (Landscape and Portrait mobiles)  ?*/  
+}
+@media only screen and (max-width: 401px) {
+input{
+  width: 220px;
+  flex: auto;
+}
+input::placeholder{
+  font-size: 11px;
+}
+}
+
+
+
+/* =====  End Media Queries Section  ===== */
